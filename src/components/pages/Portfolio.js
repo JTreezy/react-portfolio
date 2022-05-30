@@ -21,7 +21,7 @@ export default function Portfolio() {
               <a href="https://github.com/JTreezy/booklastic-blog-place" target="_blank">
                 <img src={booklastic} alt="booklastic" /></a>
               <div className="text-block">
-                <a className="btn btn-outline-warning" href="https://fathomless-bastion-58602.herokuapp.com/"
+                <a className="btn" href="https://fathomless-bastion-58602.herokuapp.com/"
                   target="_blank">
                   <h6>Booklastic Blog Place</h6>
                   <p>A book blog that utilizes the MVC paradigm with capabilites of in-real-time chat functionality</p>

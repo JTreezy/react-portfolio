@@ -1,6 +1,4 @@
 import React from 'react';
-
-// Components.
 import About from '../pages/About';
 import Portfolio from '../pages/Portfolio';
 import Resume from '../pages/Resume';

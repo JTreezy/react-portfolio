@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-// import './Styles/Contact.css';
 import { validateEmail } from '../utils/helpers';
 
 function Contact() {
-  // Here we set two state variables for firstName and lastName using `useState`
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');

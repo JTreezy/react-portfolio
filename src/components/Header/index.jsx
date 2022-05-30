@@ -3,7 +3,7 @@ import Nav from '../Nav';
 import Logo from '../Logo';
 
 const Header = ({ selectedNavItem, setSelectedNavItem }) => (
-	<header className="site-header py-5">
+	<header>
 		<Logo />
 		<Nav
 			selectedNavItem={selectedNavItem}
