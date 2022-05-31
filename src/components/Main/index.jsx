@@ -5,7 +5,7 @@ import Resume from '../pages/Resume';
 import ContactForm from '../pages/Contact';
 
 const Main = ({ selectedNavItem }) => (
-  <div className="site-main flex-grow">
+  <div className="site-main">
     {selectedNavItem === 'About' && (
       <About/>
     )}

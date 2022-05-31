@@ -24,16 +24,16 @@ const Nav = ({ selectedNavItem, setSelectedNavItem }) => {
 				Portfolio
 			</span>
 			<span
-				className={`nav-item inline-block ${selectedNavItem === 'Resume' ? 'nav-active' : ''}`}
-				onClick={handleNavClick}
-			>
-				Resume
-			</span>
-			<span
 				className={`nav-item inline-block ${selectedNavItem === 'Contact' ? 'nav-active' : ''}`}
 				onClick={handleNavClick}
 			>
 				Contact
+			</span>
+			<span
+				className={`nav-item inline-block ${selectedNavItem === 'Resume' ? 'nav-active' : ''}`}
+				onClick={handleNavClick}
+			>
+				Resume
 			</span>
 		</nav>
 	);

@@ -1,96 +1,145 @@
 import React, { useState } from 'react';
-import { validateEmail } from '../utils/helpers';
+import { capitalizeFirstLetter, validateEmail } from '../utils/helpers';
+import Button from '../Button';
 
-function Contact() {
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+const ContactForm = () => {
+  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+  const {
+    name,
+    email,
+    message,
+  } = formState;
+  const [errorMessages, setErrorMessages] = useState({
+    'email': '',
+    'name': '',
+    'message': '',
+  });
+  const {
+    email: emailErr,
+    name: nameErr,
+    message: msgErr,
+  } = errorMessages;
 
-  const handleInputChange = (e) => {
-   
-    const { name, value } = e.target;
-   
-    if (name === 'fullName') {
-      setFullName(value);
+  const handleInputBlur = (event) => {
+    if (event.target.name === 'email') {
+      const emailValid = validateEmail(event.target.value);
 
-    } else if (name === 'email') {
-      setEmail(value);
+      if (!emailValid) {
+        setErrorMessages({...errorMessages, 'email': 'Your email is invalid.'});
+      } else {
+        setErrorMessages({...errorMessages, 'email': ''});
+      }
     }
-    else {
-      setMessage(value)
+
+    if (event.target.name === 'name' || event.target.name === 'message') {
+      if (!event.target.value.length) {
+        setErrorMessages({...errorMessages, [event.target.name]: `${capitalizeFirstLetter(event.target.name)} is required.`});
+      } else {
+        setErrorMessages({...errorMessages, [event.target.name]: ''});
+      }
     }
-     
+
+    const weHaveErrors = emailErr|| nameErr || msgErr;
+
+    if (!weHaveErrors) {
+      setFormState({...formState, [event.target.name]: event.target.value });
+    }
   };
 
-  const handleFormSubmit = (e) => {
-   
-    e.preventDefault();
-    if (!validateEmail(email) || !fullName) {
-      setErrorMessage('Email Address or Full Name is invalid');
-
-      return;
-     
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  
+    if (! formState.email) {
+      console.log('No email, no contact!'); 
+    } else {
+      console.log(formState); 
     }
-   
-    alert(`Message sent to ${email}`);
-    setFullName('');
-    setEmail('');
-    setMessage('');
-    setErrorMessage("")
   };
 
   return (
-    <div>
-      <div>
-        <h3>Contact Me</h3>
-      </div>
-      <div >
-
-        <form>
-          <div>
+    <section className="contact">
+      <h1>Contact Me</h1>
+      <p>(Form Validation Demonstration for Front End only)</p>
+      <form
+        id="contact-form"
+        className=""
+        onSubmit={handleSubmit}
+      >
+        <div className="">
+          <div className="">
+            <label
+              className=""
+              htmlFor="name"
+            >
+              Name:
+            </label>
+          </div>
+          <div className="">
             <input
-              value={fullName}
-              name="fullName"
-              onChange={handleInputChange}
+              className=""
               type="text"
-              placeholder="Full Name"
+              name="name"
+              defaultValue={name}
+              onBlur={(value) => handleInputBlur(value)}
             />
+            {nameErr && (
+              <p className="">{nameErr}</p>
+            )}
           </div>
-          <div>
-
-            <input
-              value={email}
-              name="email"
-              onChange={handleInputChange}
-              type="text"
-              placeholder="Email Address"
-            />
-          </div>
-          <div>
-
-            <textarea
-              value={message}
-              name="mesage"
-              onChange={handleInputChange}
-              type="text"
-              placeholder="Message"
-            />
-          </div>
-          <button type="button" onClick={handleFormSubmit}>
-            Submit
-          </button>
-          {errorMessage && (
-        <div>
-          <p>{errorMessage}</p>
         </div>
-      )}
-        </form>
-      </div>
-      
-    </div>
-    
+        <div className="">
+          <div className="">
+            <label
+                className=""
+                htmlFor="email"
+              >
+                Email:
+            </label>
+          </div>
+          <div className="">
+            <input
+              className=""
+              type="email"
+              name="email"
+              defaultValue={email}
+              onBlur={(value) => handleInputBlur(value)}
+            />
+            {emailErr && (
+              <p className="">{emailErr}</p>
+            )}
+          </div>
+        </div>
+        <div className="">
+        <div className="">
+            <label
+                className=""
+                htmlFor="message"
+              >
+                Message:
+            </label>
+          </div>
+          <div className="">
+            <textarea
+              className=""
+              name="message"
+              rows="5"
+              defaultValue={message}
+              onBlur={(value) => handleInputBlur(value)}
+            />
+            {msgErr && (
+              <p className="">{msgErr}</p>
+            )}
+          </div>
+        </div>
+        <div className="">
+          <div className=""></div>
+          <div className="">
+            <Button type="submit" text="Submit" />
+          </div>
+        </div>
+      </form>
+    </section>
   );
-}
+};
 
-export default Contact;
+export default ContactForm;
