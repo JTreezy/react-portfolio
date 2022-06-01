@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/react-portfolio/static/css/main.dc3cbf58.css",
+    "main.js": "/react-portfolio/static/js/main.565a7842.js",
+    "static/media/dinner-plans.png": "/react-portfolio/static/media/dinner-plans.e8ad77d578bd9faf2dba.png",
+    "static/media/me.jpg": "/react-portfolio/static/media/me.4ae103ffef434685e992.jpg",
+    "static/media/github.png": "/react-portfolio/static/media/github.9ccacece8781b29445fe.png",
+    "static/media/jtresume.pdf": "/react-portfolio/static/media/jtresume.74b04d5889a31bcd0e9e.pdf",
+    "static/media/booklastic.png": "/react-portfolio/static/media/booklastic.c1906539b11e3caaaa86.png",
+    "static/media/linkedin.png": "/react-portfolio/static/media/linkedin.a680cb8ad2b88be03d17.png",
+    "static/media/scheduler.png": "/react-portfolio/static/media/scheduler.8bed848096d9d25975b5.png",
+    "static/media/weather.png": "/react-portfolio/static/media/weather.019f9fd92ca5fabfad01.png",
+    "static/media/blackjack-console.png": "/react-portfolio/static/media/blackjack-console.860dee62cf90ea25ed46.png",
+    "static/media/logo.png": "/react-portfolio/static/media/logo.c3c650a36ad8d397a5a9.png",
+    "static/media/email.png": "/react-portfolio/static/media/email.f8956154d5eb279fbb2f.png",
+    "static/media/password.png": "/react-portfolio/static/media/password.dbc4fb80aae51a6def57.png",
+    "index.html": "/react-portfolio/index.html",
+    "main.dc3cbf58.css.map": "/react-portfolio/static/css/main.dc3cbf58.css.map",
+    "main.565a7842.js.map": "/react-portfolio/static/js/main.565a7842.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc3cbf58.css",
+    "static/js/main.565a7842.js"
+  ]
+}
