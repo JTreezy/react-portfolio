@@ -1,0 +1,45 @@
+.project{
+    display: flex;
+    text-align:center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.projectImage{
+    width: 50vw;
+    height: 70vh;
+    padding: 30px;
+}
+
+.project-title{
+    text-align: center;
+    padding: 30px;
+    font-size: 60px;
+    color: palegreen;
+}
+
+.project-description{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 18px;
+    width: 50%;
+}
+
+
+
+.card-container{
+    display: flex;
+    text-align:center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-container a{
+    color: hotpink;
+}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { capitalizeFirstLetter, validateEmail } from '../utils/helpers';
 import Button from '../Button';
+import './styles/contact.scss';
+
 
 const ContactForm = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -58,7 +60,7 @@ const ContactForm = () => {
 
   return (
     <section className="contact">
-      <h1>Contact Me</h1>
+      <h1 className='contact-title'>Contact Me</h1>
       <p>(Form Validation Demonstration for Front End only)</p>
       <form
         id="contact-form"
@@ -134,7 +136,7 @@ const ContactForm = () => {
         <div className="">
           <div className=""></div>
           <div className="">
-            <Button type="submit" text="Submit" />
+            <Button className='button is-light' text="Submit" />
           </div>
         </div>
       </form>

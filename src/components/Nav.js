@@ -1,4 +1,5 @@
 import React from 'react';
+import './pages/styles/nav.scss'
 
 const Nav = ({ selectedNavItem, setSelectedNavItem }) => {
 	const handleNavClick = (event) => {
@@ -8,14 +9,14 @@ const Nav = ({ selectedNavItem, setSelectedNavItem }) => {
 
 	return (
 		<nav>
-			<a
+			<span
 				className={`nav-item inline-block ${selectedNavItem === 'About' ? 'nav-active' : ''}`}
 				data-testid="about"
 				href="#about"
 				onClick={handleNavClick}
 			>
 				About
-			</a>
+			</span>
 			<span
 				className={`nav-item inline-block ${selectedNavItem === 'Portfolio' ? 'nav-active' : ''}`}
 				data-testid="portfolio"

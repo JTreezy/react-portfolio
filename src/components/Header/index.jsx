@@ -4,9 +4,9 @@ import Logo from '../Logo';
 import './header.scss'
 
 const Header = ({ selectedNavItem, setSelectedNavItem }) => (
-	<header>
+	<header className='header'>
 		<Logo />
-		<Nav
+		<Nav className='nav'
 			selectedNavItem={selectedNavItem}
 			setSelectedNavItem={setSelectedNavItem}
 		/>

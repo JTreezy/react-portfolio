@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Project from '../Project'
+import './styles/portfolio.scss'
 
 const Portfolio = () => {
   const [projects] = useState([
@@ -45,7 +46,7 @@ const displayProjects = projects;
 
 return (
   <section className='portfolio'>
-  <div>
+  <div className='project-card'>
         {displayProjects && displayProjects.map((project) => (
           <Project key={project.name} project={project} />
         ))}
